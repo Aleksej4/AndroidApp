@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainWindow">
+    tools:context=".MainWindow"
+    android:background="@color/accent">
     <include layout="@layout/toolbar"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
