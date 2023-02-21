@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/accent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LogIn">
@@ -22,45 +23,76 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
-        android:layout_width="200dp"
+        android:id="@+id/password"
+        android:layout_width="250dp"
         android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@drawable/password_lock"
+        android:drawablePadding="2dp"
         android:ems="10"
+        android:fontFamily="@font/houston"
+        android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintVertical_bias="0.68" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="200dp"
+        android:id="@+id/email"
+        android:layout_width="250dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@drawable/email_icon"
+        android:drawablePadding="2dp"
         android:ems="10"
+        android:fontFamily="@font/houston"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
+        app:layout_constraintVertical_bias="0.711" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_buttons"
+        android:fontFamily="@font/hilsfiger"
         android:text="Sign in"
         android:textAllCaps="false"
-        android:fontFamily="@font/hilsfiger"
         android:textColor="@color/secondary"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.093" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <ImageView
+        android:id="@+id/email_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/email"
+        app:layout_constraintStart_toEndOf="@+id/email"
+        app:layout_constraintTop_toTopOf="@+id/email"
+        app:layout_constraintVertical_bias="0.583"
+        app:srcCompat="@drawable/warning" />
+
+    <ImageView
+        android:id="@+id/password_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/password"
+        app:layout_constraintStart_toEndOf="@+id/password"
+        app:layout_constraintTop_toTopOf="@+id/password"
+        app:layout_constraintVertical_bias="0.583"
+        app:srcCompat="@drawable/warning" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
