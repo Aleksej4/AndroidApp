@@ -1,6 +1,7 @@
 package com.example.testapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.media.Image;
 import android.os.Bundle;
@@ -14,6 +15,10 @@ public class MainWindow extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_window);
+
+        ViewPager viewPager = findViewById(R.id.images);
+        ImageAdapter adapter = new ImageAdapter(this);
+        viewPager.setAdapter(adapter);
 
         ImageView backButton = findViewById(R.id.backButton);
         ImageView menuButton = findViewById(R.id.menuButton);

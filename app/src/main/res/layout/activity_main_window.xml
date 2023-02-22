@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainWindow"
     android:background="@color/accent">
-    <include layout="@layout/toolbar"/>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/images"
+        android:layout_width="match_parent"
+        android:layout_height="675dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
