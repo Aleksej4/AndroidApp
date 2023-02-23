@@ -1,6 +1,7 @@
 package com.example.testapplication;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -8,17 +9,22 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-public class ImageAdapter extends PagerAdapter {
-    private Context context;
-    private int[] mImageIds = new int[] {R.drawable.images, R.drawable.images1, R.drawable.images2};
+import java.util.ArrayList;
+import java.util.List;
 
-    ImageAdapter(Context context){
+public class ImageAdapter extends PagerAdapter {
+    private List<Integer> mImageList;
+    private LayoutInflater mInflater;
+    private Context context;
+
+    public ImageAdapter(Context context, List<Integer> imageList) {
         this.context = context;
+        mImageList = imageList;
     }
 
     @Override
     public int getCount() {
-        return mImageIds.length;
+        return mImageList.size();
     }
 
     @Override
@@ -26,18 +32,25 @@ public class ImageAdapter extends PagerAdapter {
         return view == object;
     }
 
-    @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(mImageIds[position]);
+        imageView.setImageResource(mImageList.get(position));
         container.addView(imageView, 0);
         return imageView;
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((ImageView) object);
+        container.removeView((View) object);
+    }
+
+    public void setImageList(List<Integer> imageList) {
+        mImageList = imageList;
     }
 }
+
+
+
+
