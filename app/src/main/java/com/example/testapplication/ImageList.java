@@ -40,11 +40,12 @@ public class ImageList {
                 images.add(R.drawable.five);
                 break;
             case "2":
-                images.add(R.drawable.);
-                images.add(R.drawable);
+                images.add(R.drawable.four);
+                images.add(R.drawable.one);
                 break;
             case "3":
-                images.add(R.drawable.images3);
+                images.add(R.drawable.two);
+                images.add(R.drawable.three);
                 break;
         }
         adIds.remove(adId);
